@@ -1,21 +1,18 @@
 package com.shiggy.jokesapp.services;
 
+import org.springframework.stereotype.Service;
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
+@Service
 public class JokeProviderServiceImpl implements JokeProviderService{
 
-    private ChuckNorrisQuotes chuckNorrisQuotes;
+    private final ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
 
     public ChuckNorrisQuotes getChuckNorrisQuotes() {
         return chuckNorrisQuotes;
     }
 
-    public void setChuckNorrisQuotes(ChuckNorrisQuotes chuckNorrisQuotes) {
-        this.chuckNorrisQuotes = chuckNorrisQuotes;
-    }
-
-    public JokeProviderServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
-        this.chuckNorrisQuotes = chuckNorrisQuotes;
+    public JokeProviderServiceImpl() {
     }
 
     @Override
